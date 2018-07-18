@@ -1,0 +1,10 @@
+<ng-container *ngIf="movie">
+    <img src="api{{movie.poster_path}}">
+    <h2>{{movie.title}}</h2>
+    <p><b>Overview: </b>{{movie.overview}}</p>
+    <b>Budget:</b> {{movie.budget | currency: "€"}}<br>
+    <b>Release date:</b> {{movie.release_date | date:"dd/MM/yyyy"}}<br>
+        <b>Vote:</b> {{movie.vote_average}}<br>
+</ng-container>
+
+

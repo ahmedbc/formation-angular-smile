@@ -1,0 +1,10 @@
+<ng-container *ngIf="person">
+  <img src="api{{person.profile_path}}">
+  <h2>{{person.name}}</h2>
+  <p><b>Biography: </b>{{person.biography}}</p>
+  <b>place_of_birth:</b> {{person.place_of_birth}}<br>
+  <b>birthday:</b> {{person.birthday | date:"dd/MM/yyyy"}}<br>
+  <b>deathday:</b> {{person.deathday | date:"dd/MM/yyyy"}}<br>
+</ng-container>
+
+
