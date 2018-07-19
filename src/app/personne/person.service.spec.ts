@@ -1,15 +1,17 @@
 import { TestBed, inject } from '@angular/core/testing';
 
-import { PersonneService } from './person.service';
+import { PersonService } from './person.service';
+import {NO_ERRORS_SCHEMA} from '@angular/core';
 
 describe('PersonneService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [PersonneService]
+      providers: [PersonService],
+        schemas: [NO_ERRORS_SCHEMA]
     });
   });
 
-  it('should be created', inject([PersonneService], (service: PersonneService) => {
+  it('should be created', inject([PersonService], (service: PersonService) => {
     expect(service).toBeTruthy();
   }));
 });

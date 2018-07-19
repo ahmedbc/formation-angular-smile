@@ -1,4 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
+import {BrowserModule, Title} from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import {RouterModule, Routes} from '@angular/router';
 import { NgModule } from '@angular/core';
@@ -12,10 +12,15 @@ import { MoviePosterComponent } from './movie/movie-poster/movie-poster.componen
 import { MoviePageComponent } from './movie/movie-page/movie-page.component';
 import { MovieDetailComponent } from './movie/movie-detail/movie-detail.component';
 import { MovieCreditsComponent } from './movie/movie-credits/movie-credits.component';
-import { PersonnePageComponent } from './personne/person-page/person-page.component';
 import { PersonDetailsComponent } from './personne/person-details/person-details.component';
 import { PersonPosterComponent } from './personne/person-poster/person-poster.component';
 import { MenuComponent } from './common/menu/menu.component';
+import { ScrollComponent } from './common/scroll/scroll.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { AutocompleteComponent } from './common/menu/autocomplete/autocomplete.component';
+import {SearchService} from './common/search.service';
+import {PersonService} from './personne/person.service';
+import {PersonPageComponent} from './personne/person-page/person-page.component';
 
 
 const appRoutes: Routes = [
@@ -29,33 +34,36 @@ const appRoutes: Routes = [
     {
         path: 'person',
         children: [
-{path: ':id', component: PersonnePageComponent}
+{path: ':id', component: PersonPageComponent}
         ]
     },
     {path: '**', redirectTo: 'movie/popular', pathMatch: 'full'}
 ];
 
+
 @NgModule({
-  declarations: [
-    AppComponent,
-    PopularPageComponent,
-    MoviePosterComponent,
-    MoviePageComponent,
-    MovieDetailComponent,
-    MovieCreditsComponent,
-      PersonnePageComponent,
-      PersonDetailsComponent,
-      PersonPosterComponent,
-      MenuComponent
-  ],
-  imports: [
-      HttpClientModule,
-      BrowserModule,
-      RouterModule.forRoot(appRoutes)
-  ],
-  providers: [
-      // MovieService
-  ],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        PopularPageComponent,
+        MoviePosterComponent,
+        MoviePageComponent,
+        MovieDetailComponent,
+        MovieCreditsComponent,
+        PersonPageComponent,
+        PersonPosterComponent,
+        PersonDetailsComponent,
+        MenuComponent,
+        ScrollComponent,
+        AutocompleteComponent
+    ],
+    imports: [
+        BrowserModule,
+        FormsModule,
+        ReactiveFormsModule,
+        HttpClientModule,
+        RouterModule.forRoot(appRoutes)
+    ],
+    providers: [Title],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }

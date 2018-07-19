@@ -3,16 +3,20 @@
 
     <li>
       <h3>Cast</h3>
+      <imdb-scroll>
       <imdb-person-poster *ngFor="let cast of credits.cast" [person]="cast">
 
       </imdb-person-poster>
+      </imdb-scroll>
 
     </li>
     <li>
       <h3>Crew</h3>
+      <imdb-scroll>
       <imdb-person-poster *ngFor="let crew of credits.crew" [person]="crew">
 
       </imdb-person-poster>
+      </imdb-scroll>
     </li>
   </ul>
 </ng-container>

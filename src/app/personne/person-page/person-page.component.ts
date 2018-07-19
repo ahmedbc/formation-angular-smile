@@ -12,7 +12,7 @@ import {PersonService} from '../person.service';
     templateUrl: './person-page.component.html',
     styleUrls: ['./person-page.component.css']
 })
-export class PersonnePageComponent implements OnInit {
+export class PersonPageComponent implements OnInit {
     @Input()
     person: Personne;
     movies: Movie[];
