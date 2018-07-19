@@ -21,6 +21,7 @@ import { AutocompleteComponent } from './common/menu/autocomplete/autocomplete.c
 import {SearchService} from './common/search.service';
 import {PersonService} from './personne/person.service';
 import {PersonPageComponent} from './personne/person-page/person-page.component';
+import { ModelDrivenFormComponent } from './model-driven-form/model-driven-form.component';
 
 
 const appRoutes: Routes = [
@@ -54,7 +55,8 @@ const appRoutes: Routes = [
         PersonDetailsComponent,
         MenuComponent,
         ScrollComponent,
-        AutocompleteComponent
+        AutocompleteComponent,
+        ModelDrivenFormComponent
     ],
     imports: [
         BrowserModule,
